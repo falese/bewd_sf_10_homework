@@ -1,18 +1,15 @@
-<%= form_for @artist do |f| %>
 
-<p>
-<%f.label :name %><BR>
-<%f.text_field :name %><BR>
-</p>
-<p>
-  <%f.label :description %><BR>
-  <%f.text_field :description %><BR>
-</p>
-<p>
-  <%f.label :image_url %><BR>
-  <%f.text_field :image_url %><BR>
-</p>
-      <P>
-          <%= f.submit %>
-      </P>
-<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 style="color:red;">Create New Artist</h1>
+    <div class="panel-body">
+  <%= simple_form_for @artist do |f| %>
+  <%= f.input :name, label: false, placeholder: "Name" %>
+  <%= f.input :description, label: false, placeholder: "Description"%>
+  <%= f.input :image_url, label: false, placeholder: "Image Url" %>
+  <%= f.submit "Submit".html_safe, class: "btn btn-danger btn-large" %>
+    <% end %>
+    </div>
+</div>
+</div>

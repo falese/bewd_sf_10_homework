@@ -20,9 +20,11 @@
 
           <%=link_to 'Show', artist_path(artist), class: 'btn btn-default btn-xs' %>
           <%=link_to 'Edit', edit_artist_path(artist), class: 'btn btn-success btn-xs' %>
-          <%=link_to 'Delete', artist, method: :delete, data: {confirm: "DESTROY?"}, class: 'btn btn-danger btn-xs' %>
+          <%=link_to 'Delete', @artist, method: :delete, data: {confirm: "DESTROY?"}, class: 'btn btn-danger btn-xs' %>
         </td>
       <% end %>
     </table>
   </div>
+  <div class="well">
+    <%= link_to "Add new Artist", new_artist_path, class:'btn btn-default btn-large' %>
 </div>
