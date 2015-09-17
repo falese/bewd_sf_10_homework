@@ -28,7 +28,6 @@ class ArtistsController < ApplicationController
 private
   def artist_params
     params.require(:name).permit(:description, :image_url)
-
   end
 
 end
