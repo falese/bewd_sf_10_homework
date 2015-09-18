@@ -1,7 +1,7 @@
 
 <div class="col-xs-12">
   <div class="table-responsive">
-    <h1 style="color:red;">Here are the Artists</h1>
+    <h1 style="color:red; font-family: 'Roboto', sans-serif;">Here are the Artists</h1>
     <table class="table table-hover">
 
 <!--This is a table row with headers  -->
@@ -20,7 +20,7 @@
 
           <%=link_to 'Show', artist_path(artist), class: 'btn btn-default btn-xs' %>
           <%=link_to 'Edit', edit_artist_path(artist), class: 'btn btn-success btn-xs' %>
-          <%=link_to 'Delete', @artist, method: :delete, data: {confirm: "DESTROY?"}, class: 'btn btn-danger btn-xs' %>
+          <%=link_to 'Delete', artist, method: :delete, data: {confirm: "DESTROY?"}, class: 'btn btn-danger btn-xs' %>
         </td>
       <% end %>
     </table>
