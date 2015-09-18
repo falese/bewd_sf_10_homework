@@ -1,5 +1,23 @@
+<div class="container">
+  <div class="col-xs-12">
+  <h1 style="color:red; font-family: 'Roboto', sans-serif;"><%= @artist.name %></h1>
+  </div>
+<div class="col-md-4">
+  <%=image_tag(@artist.image_url,class: 'img-thumbnail img-rounded')   %>
+
+</div>
+
+<div class="col-md-4">
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-<%= @artist.description %>
-  <%=image_tag(@artist.image_url,class: 'img-thumbnail img-responsive')   %>
+  <h3 style="font-family: 'Roboto', sans-serif;"><strong>Bio</strong></h3>
+  <%= @artist.description %>
+</p>
+</div>
+<div class="col-md-4">
+<h3 style="font-family: 'Roboto', sans-serif;"><strong>Songs</strong></h3>
+<%= render @artist.songs %>
+<h4 style="font-family: 'Roboto', sans-serif;"><strong>Add a Song</strong></h4>
+
+
+</div>
+</div>

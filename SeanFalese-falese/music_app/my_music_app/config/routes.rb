@@ -13,7 +13,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root and thats what i did below"
   root 'static_pages#home'
-  resources :artists
+  resources :artists do
+    resources :songs
+  end
+    
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

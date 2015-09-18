@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+    <div class="panel-body">
+
+  <%= simple_form_for @song do |f| %>
+  <%= f.input :title, label: false, placeholder: "Title" %>
+  <%= f.input :length, label: false, placeholder: "Length"%>
+  <%= f.input :genre, label: false, placeholder: "Genre"%>
+  <%= f.submit "Submit".html_safe, class: "btn btn-danger btn-large" %>
+    <% end %>
+    </div>
+</div>
+</div>
