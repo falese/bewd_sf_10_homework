@@ -1,8 +1,8 @@
 class SongsController < ApplicationController
 
   def index
-    @song = Song.new
-    @songs = Song.all
+    @artist = Artist.new
+    @songs = @artist.songs.all
   end
 
   def show
@@ -10,7 +10,8 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    @artist = Artist.new
+    @song = @artist.songs.build
   end
 
   def create
@@ -39,7 +40,7 @@ class SongsController < ApplicationController
 
 private
   def song_params
-    params.require(:song).permit(:title, :length, :genre)
+    params.require(:song).permit(:title, :length, :genre, :artist_id)
   end
   def get_song
     Song.find(params[:id])

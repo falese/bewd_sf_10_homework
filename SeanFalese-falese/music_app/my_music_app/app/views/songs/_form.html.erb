@@ -3,7 +3,7 @@
 
     <div class="panel-body">
 
-  <%= simple_form_for @song do |f| %>
+  <%= simple_form_for [@artist, @song],  url: new_artist_song_path(@artist, @song) do |f| %>
   <%= f.input :title, label: false, placeholder: "Title" %>
   <%= f.input :length, label: false, placeholder: "Length"%>
   <%= f.input :genre, label: false, placeholder: "Genre"%>
