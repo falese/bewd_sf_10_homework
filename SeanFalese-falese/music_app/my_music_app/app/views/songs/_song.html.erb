@@ -1,17 +1,19 @@
 <div class="col-xs">
   <div class ="table-responsive">
     <table class="table table-hover">
-      <% @song = Song.new %>
+
       <tr>
         <th>Title</th>
         <th>Length</th>
         <th>Genre</th>
       </tr>
+      <% @artist.songs.each do |song| %>
         <tr>
-          <td><%= @song.title %></td>
-          <td><%= @song.length %></td>
-          <td><%= @song.genre %></td>
+          <td><%= song.title %></td>
+          <td><%= song.length %></td>
+          <td><%= song.genre %></td>
         </tr>
+        <% end %>
       </table>
     </div>
   </div>

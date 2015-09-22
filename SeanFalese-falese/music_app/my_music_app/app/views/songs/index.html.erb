@@ -1,7 +1,7 @@
 
 <div class="col-xs-12">
   <div class="table-responsive">
-    <h1 style="color:red; font-family: 'Roboto', sans-serif;">Here are the Artists</h1>
+    <h1 style="color:red; font-family: 'Roboto', sans-serif;">Here are the Songs</h1>
     <table class="table table-hover">
 
 <!--This is a table row with headers  -->
@@ -11,7 +11,7 @@
         <th>Genre</th>
 
       </tr>
-      <% @songs.each do |song| %>
+      <% @songs.each do |song|  %>
       <tr>
         <td><%=song.title %>  </td>
         <td> <%=song.length %> </td>
@@ -26,5 +26,5 @@
     </table>
   </div>
   <div class="well">
-    <%= link_to "Add new Song", new_artist_song_path, class:'btn btn-default btn-large' %>
+
 </div>

@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :artists do
     resources :songs
+    resources :reviews
   end
-    
+  resources :songs
 
 
   # Example of regular route:

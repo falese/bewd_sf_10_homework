@@ -14,9 +14,28 @@
 </p>
 </div>
 <div class="col-md-4">
+  <p>
 <h3 style="font-family: 'Roboto', sans-serif;"><strong>Songs</strong></h3>
-<%= render @artist.songs %>
-<h4 style="font-family: 'Roboto', sans-serif;"><strong>Add a Song</strong></h4>
+<!-- <%= render @artist.songs %> -->
+</p>
+<div class ="table-responsive">
+  <table class="table table-hover">
+
+    <tr>
+      <th>Title</th>
+      <th>Length</th>
+      <th>Genre</th>
+    </tr>
+    <% @artist.songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.length %></td>
+        <td><%= song.genre %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+<h4 style="font-family: 'Roboto', sans-serif;"></h4>
 <%= link_to "Add new Song", new_artist_song_path(@artist, @song), class:'btn btn-default btn-large' %>
 </div>
 </div>
