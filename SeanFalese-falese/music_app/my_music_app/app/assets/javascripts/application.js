@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.easing.min
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require grayscale
 //= require turbolinks
 //= require_tree .
