@@ -18,7 +18,6 @@ class SongsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.create(song_params)
     redirect_to artist_path(@artist)
-
   end
 
   def edit
@@ -39,9 +38,11 @@ class SongsController < ApplicationController
 
 
 private
+
   def song_params
     params.require(:song).permit(:title, :length, :genre, :artist_id)
   end
+
   def get_song
     Song.find(params[:id])
   end
