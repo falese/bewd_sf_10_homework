@@ -1,0 +1,16 @@
+<% form_for @song do |f| %>
+<p>Title<br>
+<%=f.text_field :title %>
+</p>
+
+<p>Length<br>
+<%=f.text_field :length %>
+</p>
+
+<p>Genre<br>
+  <%=f.text_field :genre %>
+</p>
+<p>Select an artist<br>
+  <%=f.collection_select(:artist_id, Artist.all, :id, :name)
+  <%= submit_tag %>
+    <% end %>

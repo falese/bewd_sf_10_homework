@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     resources :songs
     resources :reviews
   end
-  resources :songs
+  resources :songs do
+    get 'add'
+  end
 
 
   # Example of regular route:
