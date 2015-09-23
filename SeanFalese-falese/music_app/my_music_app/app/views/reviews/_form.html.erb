@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+    <div class="panel-body">
+  <%= simple_form_for [@reviewable_item, @review] do |f| %>
+  <%= f.input :author, label: false, placeholder: "Author" %>
+  <%= f.input :body, label: false, placeholder: "Review"%>
+  <%= f.submit "Submit".html_safe, class: "btn btn-danger btn-large" %>
+    <% end %>
+    </div>
+</div>
+</div>

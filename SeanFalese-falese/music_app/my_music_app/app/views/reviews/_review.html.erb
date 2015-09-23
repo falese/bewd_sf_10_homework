@@ -1,0 +1,18 @@
+<div class="col-xs">
+  <div class ="table-responsive">
+    <table class="table table-hover">
+
+      <tr>
+        <th>Author</th>
+        <th>Body</th>
+
+      </tr>
+      <% @reviewable_item.reviews.each do |review| %>
+        <tr>
+          <td><%= review.author %></td>
+          <td><%= review.body %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>

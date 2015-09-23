@@ -12,6 +12,8 @@
   <h3 style="font-family: 'Roboto', sans-serif;"><strong>Bio</strong></h3>
   <%= @artist.description %>
 </p>
+
+
 </div>
 <div class="col-md-4">
   <p>
@@ -35,7 +37,33 @@
       <% end %>
     </table>
   </div>
+  <p>
+<h3 style="font-family: 'Roboto', sans-serif;"><strong>Reviews</strong></h3>
+<!-- <%= render @artist.songs %> -->
+</p>
+  <div class ="table-responsive">
+    <table class="table table-hover">
+      <tr>
+        <th>Author</th>
+        <th>Review</th>
+      </tr>
+
+        <% @artist.reviews.each do |review| %>
+      <tr>
+        <td><%= review.author %></td>
+        <td><%=review.body %> </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
 <h4 style="font-family: 'Roboto', sans-serif;"></h4>
 <%= link_to "Add new Song", new_artist_song_path(@artist, @song), class:'btn btn-default btn-large' %>
+<%= link_to "Review", new_artist_review_path(@artist, @review), class:'btn btn-default btn-large' %>
 </div>
+</div>
+<div class="well">
+  <%= link_to "All Artists", artists_path, class:'btn btn-default btn-large' %>
+  <%=link_to 'Edit This Artist', edit_artist_path(@artist), class: 'btn btn-default btn-large' %>
+  <%=link_to 'Delete This Artist', @artist, method: :delete, data: {confirm: "DESTROY?"}, class: 'btn btn-default btn-large' %>
 </div>

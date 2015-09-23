@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922041809) do
+ActiveRecord::Schema.define(version: 20150922220854) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20150922041809) do
   create_table "reviews", force: :cascade do |t|
     t.string   "author"
     t.text     "body"
-    t.integer  "rating"
-    t.integer  "artist_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "reviews", ["artist_id"], name: "index_reviews_on_artist_id"
+  add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"

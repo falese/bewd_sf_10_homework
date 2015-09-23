@@ -12,5 +12,5 @@
 
 class Artist < ActiveRecord::Base
   has_many :songs, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, dependent: :destroy, as: :reviewable
 end
